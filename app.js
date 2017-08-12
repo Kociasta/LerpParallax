@@ -23,11 +23,6 @@ $(()=>{
   var currentMousePositionY;
 
   function onMousemove(event){
-    // console.log(event.mousemoveX);
-    // console.log(event.offsetX);
-    // console.log(event.pageX);
-    console.log(event.clientX);
-    console.log(event.screenX);
     currentMousePositionX = event.clientX;
     currentMousePositionY = event.clientY;
   }
