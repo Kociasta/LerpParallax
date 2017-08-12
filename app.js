@@ -1,6 +1,8 @@
 $(()=>{
   var scene = $(".scene");
   var elements = $(".element");
+  var currentMousePositionX=0 ;
+  var currentMousePositionY=0 ;
 
   var elem1 = elements[0];
 
@@ -18,14 +20,16 @@ $(()=>{
   // set event on mousemove
   scene.on("mousemove" , onMousemove);
 
-  // ---------------------------------------
-  var currentMousePositionX;
-  var currentMousePositionY;
+  // ------------------functions---------------------
 
   function onMousemove(event){
     currentMousePositionX = event.clientX;
     currentMousePositionY = event.clientY;
   }
+
+  function lerp(oldPosition, newPosition, t){
+    return newPosition*t+(1-t)*oldPosition;
+  };
 
 
 
