@@ -33,13 +33,18 @@ $(()=>{
 
   function loop(){
 
-    
+    x = currentMousePositionX;
+    y = currentMousePositionY;
 
+    $(elem1).css("left" , x+"px");
+    $(elem1).css("top" , y+"px");
+
+    // console.log(x);
     requestAnimationFrame(loop);
 
   }
 
-  // loop();
+  loop();
 
 
 
