@@ -7,10 +7,11 @@
 .scene {
     display: block;
     position: relative;
-    width: 100%;
-    height: 500px;
-    border: rgb(124, 43, 126) 1px solid;
+    width: 100vw;
+    height: 100vh;
+    border: #35203B 1px solid;
     overflow: hidden;
+    background-color: #6A9C9C;
 }
 
 .scene .element {
@@ -19,5 +20,20 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #3966a2;
+}
+
+.element:nth-child(1){
+  background-color: #7F1637;
+}
+.element:nth-child(2){
+  background-color: #FFB733;
+}
+.element:nth-child(3){
+  background-color: #C22121;
+}
+
+.pinset {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
 }
