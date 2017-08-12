@@ -5,7 +5,10 @@
 }
 
 .scene {
-    display: block;
+    /*display: block;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -20,15 +23,16 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    /*background-color: blue;*/
 }
 
-.element:nth-child(1){
+.element:nth-child(3n+0){
   background-color: #7F1637;
 }
-.element:nth-child(2){
+.element:nth-child(3n+1){
   background-color: #FFB733;
 }
-.element:nth-child(3){
+.element:nth-child(3n+2){
   background-color: #C22121;
 }
 
@@ -36,4 +40,16 @@
   width: 300px;
   height: 300px;
   border: 1px solid black;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  
+  border-radius: 50%;
+  background-color: #F57336;
+  text-align: center;
 }

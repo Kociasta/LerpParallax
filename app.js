@@ -2,8 +2,8 @@ $(()=>{
   var scene = $(".scene");
   var elements = $(".element");
   var currentMousePosition = {
-    x: 0,
-    y: 0
+    x: 657,
+    y: 278
   };
 
     // set event on mousemove
