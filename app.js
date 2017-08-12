@@ -1,8 +1,10 @@
 $(()=>{
   var scene = $(".scene");
   var elements = $(".element");
-  var currentMousePositionX=0 ;
-  var currentMousePositionY=0 ;
+  var currentMousePosition = {
+    x: 0,
+    y: 0
+  };
 
     // set event on mousemove
   scene.on("mousemove" , onMousemove);
@@ -11,8 +13,8 @@ $(()=>{
 
   function onMousemove(event){
     // typeof event.clientX/Y  is number
-    currentMousePositionX = event.clientX;
-    currentMousePositionY = event.clientY;
+    currentMousePosition.x = event.clientX;
+    currentMousePosition.y = event.clientY;
   }
   // linear interpolation
   function lerp(oldPosition, newPosition, t){
@@ -22,34 +24,50 @@ $(()=>{
   function loop(){
     // every element is calculated separately
     $(elements).each((i , elem)=>{
-      let orgX = parseInt(elem.dataset.x , 10);
-      let orgY = parseInt(elem.dataset.y , 10);
+      // get focal point from index.html (in dataset) , parse it
+      let focalPoint = {
+        x: parseInt(elem.dataset.x , 10),
+        y: parseInt(elem.dataset.y , 10)
+      };
 
-      let dX = currentMousePositionX - orgX;
-      let dY = currentMousePositionY - orgY;
+      // compute the distance between focal point and mouse pointer
+      let displacement = {
+        x: currentMousePosition.x - focalPoint.x,
+        y: currentMousePosition.y - focalPoint.y
+      };
 
-      let speed = parseFloat(elem.dataset.speed) ;
-      let dX2= dX*speed;
-      let dY2= dY*speed;
+      // need speed as fraction --> parseFloat instead of parseInt
+      let powerOfParalax = parseFloat(elem.dataset.speed);
+      let maxD = {
+        x: displacement.x*powerOfParalax,
+        y: displacement.y*powerOfParalax
+      };
 
-      let targetX = orgX + dX2;
-      let targetY = orgY + dY2;
+      // position that element want to obtain
+      let target = {
+        x: focalPoint.x + maxD.x,
+        y: focalPoint.y + maxD.y
+      };
 
-      let currX = parseInt($(elem).css("left"));
-      let currY = parseInt($(elem).css("top"));
+      // position of the element NOW
+      let currentElementPosition = {
+        x: parseInt($(elem).css("left")),
+        y: parseInt($(elem).css("top"))
+      };
 
-      let newX = lerp(currX , targetX , 0.1);
-      let newY = lerp(currY , targetY , 0.1);
+      // "future" new element position (tends to target)
+      let newElementPosition = {
+        x: lerp(currentElementPosition.x , target.x , 0.1),
+        y: lerp(currentElementPosition.y , target.y , 0.1)
+      };
 
-
-      $(elem).css("left" , newX+"px");
-      $(elem).css("top" , newY+"px");
+      // setting new position to the element
+      $(elem).css("left" , newElementPosition.x+"px");
+      $(elem).css("top" , newElementPosition.y+"px");
 
     });
 
-
     requestAnimationFrame(loop);
-
 
   }
 
