@@ -11,7 +11,7 @@ $(()=>{
   var speed = square1.dataset.speed;
 
   // set basic position of square1
-  $(square1).css("background-color" , "red");
+  $(square1).css("background-color" , "rgb(185, 5, 90)");
   $(square1).css("left" , x+"px");
   $(square1).css("top" , y+"px");
 
