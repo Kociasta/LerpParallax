@@ -31,6 +31,15 @@ $(()=>{
     return newPosition*t+(1-t)*oldPosition;
   };
 
+  function loop(){
+
+    
+
+    requestAnimationFrame(loop);
+
+  }
+
+  // loop();
 
 
 
