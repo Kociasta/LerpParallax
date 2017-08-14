@@ -14,42 +14,42 @@
     height: 100vh;
     border: #35203B 1px solid;
     overflow: hidden;
-    background-color: #6A9C9C;
+    /*background-color: #6A9C9C;*/
+    background-color: #FFFFCB;
+    font-family: Arial;
 }
 
 .scene .element {
     display: block;
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     /*background-color: blue;*/
 }
 
 .element:nth-child(3n+0){
   background-color: #7F1637;
+  background-color: #004056;
 }
 .element:nth-child(3n+1){
   background-color: #FFB733;
+  background-color: #2C858D;
 }
 .element:nth-child(3n+2){
   background-color: #C22121;
-}
-
-.pinset {
-  width: 300px;
-  height: 300px;
-  border: 1px solid black;
+  background-color: #74CEB7; 
 }
 
 .center {
+  font-size: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
-  
-  border-radius: 50%;
-  background-color: #F57336;
+
+  /*border-radius: 50%;*/
+  /*background-color: #F57336;*/
   text-align: center;
 }
