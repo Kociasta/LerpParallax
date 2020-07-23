@@ -14,8 +14,8 @@
     height: 100vh;
     border: #35203B 1px solid;
     overflow: hidden;
-    /*background-color: #6A9C9C;*/
-    background-color: #FFFFCB;
+    background-color: #6A9C9C;
+    /* background-color: #FFFFCB; */
     font-family: Arial;
 }
 
@@ -30,15 +30,15 @@
 
 .element:nth-child(3n+0){
   background-color: #7F1637;
-  background-color: #004056;
+  /* background-color: #004056; */
 }
 .element:nth-child(3n+1){
   background-color: #FFB733;
-  background-color: #2C858D;
+  /* background-color: #2C858D; */
 }
 .element:nth-child(3n+2){
   background-color: #C22121;
-  background-color: #74CEB7; 
+  /* background-color: #74CEB7; */
 }
 
 .center {
@@ -50,6 +50,6 @@
   height: 50px;
 
   /*border-radius: 50%;*/
-  /*background-color: #F57336;*/
+  /* background-color: #F57336; */
   text-align: center;
 }
